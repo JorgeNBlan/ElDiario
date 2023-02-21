@@ -1,0 +1,2 @@
+Ya que la solución aplicada no es igual al texto del enunciado;
+Me gustaría dejar la ejecución completa del código en mi cluster pyspark con capturas de pantalla.

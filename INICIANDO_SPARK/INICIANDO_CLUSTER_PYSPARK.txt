@@ -1,0 +1,22 @@
+Mi proceso para arrancar mi cluster de Pyspark es diferente al indicado en la práctica.
+Por simplificación de tiempo y recursos utilizaré y documentaré el proceso que yo conozco;
+creando primero el cluster físico, definiendo maestro y esclavos (en este caso por simplificar usaré sólo un esclavo)
+
+1- Conecto dos equipos con Ubuntu Server, el maestro será la ip 192.168.1.11 y el esclavo la 192.168.1.12 (documentado en foto Arrancando_Spark_1.jpg y Arrancando_Spark_2.jpg)
+2- Me conecto a ambos servidores, primero configuro las variables de entorno con:
+
+export PYSPARK_PYTHON=python3
+export SPARK_HOME=/home/server1/spark-3.0.1-bin-hadoop3.2
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+
+3-Me autentico como superusuario, accedo a la carpeta sbin dentro de spark en ambos.
+4-Desde el master ejectuo ./start-master.sh -h 192.168.1.11
+5-Desde el esclavo ejecuto ./start-slave.sh spark://192.168.1.11:7077
+
+(Documentado en foto Arrancando_Spark_3.jpg)
+
+6- Desde el esclavo abro el navegador por consola lynx para demostrar la ejecución del claster.
+7- Desde el maestro llamo a pyspark usando pyspark --master spark://192.168.1.11:7077
+8- Creo el spark.DataFrame desde el dict_tablon_usuario para que se vea que es la ejecución de la práctica que se pide en el ejercicio y no otra, (Arrancando_Spark_4.jpg)
+
+El resto del ejercicio ya lo hago sin cluster con SparkSession available as 'spark'

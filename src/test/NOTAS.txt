@@ -1,0 +1,4 @@
+No puedo ejecutar la prueba unitaria de pyspark porque  mi cluster pyspark está en otro entorno aislado.
+Para hacer la prueba ejecuto la prueba renombrando los scripts y funciones con el nombre de test_
+Ejecuto la prueba unitaria en el proceso de agrupación de pandas.
+Como podemos ver en la imagen el proceso ejecuta, pero el test unitario marca 1 warning y 1 error.
